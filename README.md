@@ -43,4 +43,4 @@ You can modify your account and change the name, mobile number, or email of your
 ###### 7. DELETE ACCOUNT - 
 You can delete your account after typing in the correct account number you gave when making the account.
 
-**THANK YOU**
+***THANK YOU***
