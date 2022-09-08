@@ -1,7 +1,7 @@
 # Bank-Sim
 ## School Project
 
-***This is just a small project me and my classmate are working on for my school.***
+**This is just a _small project_ me and my classmate are working on for my _school_.**
 
 ***Brief run-down:***
 
