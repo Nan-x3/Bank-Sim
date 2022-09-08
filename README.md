@@ -16,7 +16,8 @@
 7. Delete / Close An Account
 
 ###### 1. CREATE NEW ACCOUNT - 
-You can create a new account that gets added to a file created which stores all the data in binary file handling format. This was what we found to be the most reliable form of storing data.
+**You can _create a new account_ that gets added to a file created which stores all the data in binary file handling format. This was what we found to be the most reliable form of storing data.**
+
 You have to add your info which incluedes - 
 1. Preferred Account Number
 2. Name
