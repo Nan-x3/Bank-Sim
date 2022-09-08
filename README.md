@@ -2,6 +2,7 @@
 ## School Project
 
 ***This is just a small project me and my classmate are working on for my school.***
+
 ***Brief run-down:***
 
 **This is supposed to be a replication of the UI of a bank.** 
