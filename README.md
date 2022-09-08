@@ -3,7 +3,7 @@
 
 **This is just a _small project_ me and my classmate are working on for my _school_.**
 
-***Brief run-down:***
+## Brief run-down:
 
 **This is supposed to be a replication of the UI of a bank.** 
 **You can :-**
