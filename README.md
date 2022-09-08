@@ -6,13 +6,13 @@ Brief run-down:***
 
 **This is supposed to be a replication of the UI of a bank. 
 You can :- **
-**1. Create New Account**
-**2. Deposit Money**
-**3. Withdraw Money**
-**4. Check Your Balance**
-**5. Check Accounts Available**
-**6. Modify An Account**
-**7. Delete / Close An Account**
+1. Create New Account
+2. Deposit Money
+3. Withdraw Money
+4. 4. Check Your Balance
+5. Check Accounts Available
+6. Modify An Account
+7. Delete / Close An Account
 
 ###### 1. CREATE NEW ACCOUNT - 
 You can create a new account that gets added to a file created which stores all the data in binary file handling format. This was what we found to be the most reliable form of storing data.
