@@ -13,9 +13,10 @@ def CreateNewAcc():
             f.seek(0)
             Rec = pickle.load(f)
 
-        for i in range(len(Rec)):
-            if Rec[i][0] == AccNo:
-                print("Account already exists.")
+            #THIS PART IS W.I.P
+        #for i in range(len(Rec)):
+            #if Rec[i][0] == AccNo:
+                #print("Account already exists.")
 
         else:
             Rec = []
