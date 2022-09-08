@@ -4,19 +4,20 @@
 
 import pickle
 
-# Main Code 
+# Main Code
+
 
 def CreateNewAcc():
     try:
-        f = open("Bank","ab+")
+        f = open("Bank", "ab+")
         if f.tell() > 0:
             f.seek(0)
             Rec = pickle.load(f)
 
-            #THIS PART IS W.I.P
-        #for i in range(len(Rec)):
-            #if Rec[i][0] == AccNo:
-                #print("Account already exists.")
+            # THIS PART IS W.I.P
+        # for i in range(len(Rec)):
+            # if Rec[i][0] == AccNo:
+            #print("Account already exists.")
 
         else:
             Rec = []
@@ -24,32 +25,36 @@ def CreateNewAcc():
         while True:
             AccNo = int(input("\nEnter Account Number: "))
             Name = input("\nPlease enter your name: ")
-            Dep = float(input("\nPlease enter the amount you want to deposit: "))
+            Dep = float(
+                input("\nPlease enter the amount you want to deposit: "))
             MobileNo = int(input("\nPlease enter your mobile number: "))
             Email = input("\nPlease enter your email address: ")
-            Rec1 = [AccNo,Name,Dep,MobileNo,Email]
+            Rec1 = [AccNo, Name, Dep, MobileNo, Email]
             Rec.append(Rec1)
-            print("\n",Rec1)
-            print("\n",Rec)
-            f = open("Bank",'wb+')
+            print("\n", Rec1)
+            print("\n", Rec)
+            f = open("Bank", 'wb+')
             pickle.dump(Rec, f)
             f.close()
-            
-            Continue = input("\nPlease enter 'YES' or 'NO' to enter more records: ")
-            if Continue == 'YES' or Continue == 'yes' or Continue == 'Yes' or Continue == 'y' or Continue == 'Y':
+
+            Continue = input(
+                "\nDo you want to enter more records? (yes/no) : ").lower()
+            if Continue in ['yes', 'y']:
                 continue
-            elif Continue == 'NO' or Continue == 'No' or Continue == 'N' or Continue == 'n' or Continue == 'no':
+            elif Continue in ['no', 'n']:
                 break
 
     except ValueError:
         print("\nInvalid Values Entered.")
-        
+
+
 def Credit():
     try:
-        with open("Bank",'rb+') as f:
+        with open("Bank", 'rb+') as f:
             Rec = pickle.load(f)
-            acc = int(input("\nEnter the account number from which the money is to be credited: "))
-            for i in range(0,len(Rec)):
+            acc = int(
+                input("\nEnter the account number from which the money is to be credited: "))
+            for i in range(0, len(Rec)):
                 if Rec[i][0] == acc:
                     Deposit = float(input("\nEnter amount to be added: "))
                     Rec[i][2] += Deposit
@@ -64,12 +69,14 @@ def Credit():
     except FileNotFoundError:
         print("\nBank File doesn't exist.")
 
+
 def Balance():
     try:
-        f = open("Bank","rb")
+        f = open("Bank", "rb")
         Bal = pickle.load(f)
-        AccNo = int(input("\nEnter the account number of which you want to check the balance: "))
-        for i in range(0,len(Bal)):
+        AccNo = int(
+            input("\nEnter the account number of which you want to check the balance: "))
+        for i in range(0, len(Bal)):
             if Bal[i][0] == AccNo:
                 print("\nBalance Amount  - ", Bal[i][2])
                 break
@@ -79,12 +86,14 @@ def Balance():
     except FileNotFoundError:
         print("\nBank File doesn't exist.")
 
+
 def Withdraw():
     try:
-        f = open("Bank",'rb+')
+        f = open("Bank", 'rb+')
         Rec = pickle.load(f)
-        acc = int(input("\nEnter the account number from which the money is to be withdrawn: "))
-        for i in range(0,len(Rec)):
+        acc = int(
+            input("\nEnter the account number from which the money is to be withdrawn: "))
+        for i in range(0, len(Rec)):
             if Rec[i][0] == acc:
                 Withdraw = float(input("\nEnter amount to be withdrawn: "))
                 Rec[i][2] -= Withdraw
@@ -100,17 +109,20 @@ def Withdraw():
     except FileNotFoundError:
         print("\nBank File doesn't exist.")
 
+
 def AllAcc():
-    f=open("Bank","rb")
+    f = open("Bank", "rb")
     Rec = pickle.load(f)
-    for i in range(0,len(Rec)):
+    for i in range(0, len(Rec)):
         print(Rec[i][1])
+
 
 def Delete():
     try:
-        f = open("Bank","rb+")
+        f = open("Bank", "rb+")
         Rec = pickle.load(f)
-        AccNo = int(input("\nPlease enter the Account number of the Account which you want to delete: "))
+        AccNo = int(input(
+            "\nPlease enter the Account number of the Account which you want to delete: "))
 
         for i in range(len(Rec)):
             if Rec[i][0] == AccNo:
@@ -119,23 +131,26 @@ def Delete():
                 break
             else:
                 print("\nPlease choose an existing account.")
-        
+
         f.seek(0)
-        pickle.dump(Rec,f)
+        pickle.dump(Rec, f)
         f.close()
 
     except FileNotFoundError:
         print("\nFile Doesn't Exist.")
 
+
 def Update():
     try:
-        f = open("Bank","rb+")
+        f = open("Bank", "rb+")
         Rec = pickle.load(f)
-        AccNo = int(input("\nPlease enter the Account number of the Account of which you want to update: "))
+        AccNo = int(input(
+            "\nPlease enter the Account number of the Account of which you want to update: "))
 
         for i in range(len(Rec)):
             if Rec[i][0] == AccNo:
-                choice = input("\nDo you want to update this Account. Type 'YES' or 'NO': ")
+                choice = input(
+                    "\nDo you want to update this Account. Type 'YES' or 'NO': ")
 
                 if choice == 'YES' or choice == 'yes' or choice == 'Yes' or choice == 'y' or choice == 'Y':
                     while True:
@@ -149,10 +164,10 @@ def Update():
 
                         if ch == '1':
                             Rec[i][1] == input("Enter the new Name: ")
-                        elif ch =='2':
+                        elif ch == '2':
                             Rec[i][3] == input("Enter the new Mobile Number: ")
                         elif ch == '3':
-                           Rec[i][4]==input("Enter the new Email: ")
+                            Rec[i][4] == input("Enter the new Email: ")
                         elif ch == '4':
                             print("\nYour account has been updated.")
                             break
@@ -161,13 +176,14 @@ def Update():
 
                 elif choice == 'NO' or choice == 'No' or choice == 'N' or choice == 'n' or choice == 'no':
                     break
-                            
+
     except FileNotFoundError:
         print("\nFile doesn't exist")
-        
+
 # Intro
 
-print('''Welcome to GMN bank.
+
+print('''Welcome to GMN bank
 _____________________________
 ''')
 
@@ -183,10 +199,10 @@ while True:
     print("\n8. EXIT")
     print("\nSelect Your Option (1-8) ")
     ch = input("\nEnter your choice : ")
-    
+
     if ch == '1':
         CreateNewAcc()
-    elif ch =='2':
+    elif ch == '2':
         Credit()
     elif ch == '3':
         Withdraw()
@@ -196,10 +212,10 @@ while True:
         AllAcc()
     elif ch == '6':
         Delete()
-    elif ch == 7:
+    elif ch == '7':
         Update()
     elif ch == '8':
         print("\nThanks for using bank managemnt system")
         break
-    else :
+    else:
         print("\nInvalid choice")
