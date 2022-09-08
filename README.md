@@ -4,8 +4,8 @@
 ***This is just a small project me and my classmate are working on for my school.
 Brief run-down:***
 
-**This is supposed to be a replication of the UI of a bank. 
-You can :- **
+**This is supposed to be a replication of the UI of a bank.** 
+**You can :-**
 1. Create New Account
 2. Deposit Money
 3. Withdraw Money
