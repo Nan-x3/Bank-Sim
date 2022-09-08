@@ -12,18 +12,18 @@ def CreateNewAcc():
         f = open("Bank", "ab+")
         if f.tell() > 0:
             f.seek(0)
-            Rec = pickle.load(f)
-
-            # THIS PART IS W.I.P
-        # for i in range(len(Rec)):
-            # if Rec[i][0] == AccNo:
-            #print("Account already exists.")
+            Rec = pickle.load()
+            
 
         else:
             Rec = []
 
         while True:
             AccNo = int(input("\nEnter Account Number: "))
+            for i in range(len(Rec)):
+                if Rec[i][0] == AccNo:
+                    print("Account already exists.")
+                    continue
             Name = input("\nPlease enter your name: ")
             Dep = float(
                 input("\nPlease enter the amount you want to deposit: "))
